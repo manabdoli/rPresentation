@@ -1,0 +1,206 @@
+---
+title: "A. Set Theory: Set Notations"
+author: "Mansour Abdoli, PhD"
+format:
+  live-revealjs:
+    slide-number: true
+    incremental: true
+    chalkboard:
+        buttons: true  # Shows icons for easy access
+    preview-links: true
+    code-overflow: wrap
+    footer: "A.Set Theory-C"
+#resources:
+#  - assets/webr_helpers.R
+engine: knitr
+execute:
+  echo: true
+  warning: false
+  message: false
+#output-files: CK-chx.x-y.y.html
+params:
+  load_helper: false
+  showDetails: false
+---
+
+## Topics:
+- Set Definition Notations
+- Set Membership Notations
+- Cardinality of a Set
+- Set Subset Notations
+- Equality & Equivalancy
+
+{{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
+
+```{webr}
+#| echo: false
+#| output: false
+#| warning: false
+#| message: false
+
+#  Packages available in your WebR build -
+
+# Load your helper functions (optional)
+if(isTRUE(params$load_helper)){
+  helpers <- readLines("assets/webr_helpers.R", warn = FALSE)
+  eval(parse(text = helpers))
+}
+
+options(digits = 3)
+
+```
+
+```{r}
+#| echo: false
+# Helper function
+# suppressPackageStartupMessages({
+# })
+
+# if(isTRUE(params$load_helper)){
+#   source('assets/webr_helpers.R')
+# }
+# add any helper functions needed
+
+```
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+# suppressPackageStartupMessages({
+# })
+
+showDetails <- isTRUE(params$showDetails)
+hideText <- function(text, show=showDetails){
+  if(show) text else
+    funs2teach::hideText(text, docType = 'html')
+}
+
+options(knitr.kable.NA = '')
+set.seed(123)
+```
+
+## Sets & Definition Notations
+
+* Naming Convention: Capital Letters
+* Definition:
+  * Descriptive Notation
+    - $A$ is the set of integer numbers between 1 and 9.
+
+  * Roster Notation
+    - $A=\{1, 2, ..., 9\}$
+
+  * Set-builder Notation
+    - $A=\{x: x\text{ is integer}, 1\le x \le 9\}$
+    - $A=\{x| x\in \mathbb{Z}, 1\le x \le9\}$
+
+## Elements & Membership Notation
+* Naming Convention: Lower-case Letters
+* Membership:
+  - `Member of` (Symbols: $\in$)
+    - $1 \in \{1, 2, 3, ..., 9\}$
+  - `not a member of` (symbol $\notin$)
+    - $1.5 \notin \{1, 2, 3, ..., 9\}$
+* Cardinality of Set $A$ (symbol:$n(A)$):
+  * Number of elements in $A$: $n(A)=9$
+    
+## Subset Notation
+* Subset (Symbol $\subseteq$)
+  * $A\subseteq B$ means all members of $A$ are in $B$.
+  * $A$ could be equal to $B$, in this difinition.
+
+* Proper Subset (Symbol $\subset$)
+  * $A\subset B$ but $A\ne B$
+    * $B$ has at least one more element.
+
+* Emptyset:
+    - Symbols: $\emptyset, \{\}$
+    - Emptyset is a subset of any other set.
+
+## Equality of Equivalency
+- Equality: $A=B$
+  - All members of $A$ adnd $B$ are the same
+  - Both $A\subseteq B$ and $B\subseteq A$ are true.
+  - Example: 
+    - $A$ is integers between $1$ and $9$
+    - $B$ is naural numbers between $1$ and $9$
+
+- Equivalancy ($A\equiv B$) means $n(A)=n(B)$
+  - Example: $A=\{x: x\text{ is even}\}$ and $B=\{x: x\text{ is odd}\}$
+    - $A\equiv B$
+
+## Examples: Notations
+
+1. Roster: $A = \{2, 4, 6, 8\}$; describe set $A$.
+
+2. Set-builder: 
+    - $A = \{x | x \text{ is a multiple of 2 and } 1<x<9\}$
+      - Roster notation of $A$:
+     
+    - $B = \{t | t \text{ is a rational number greater than } 1\}$
+      - more algebraic based set-builder for $B$: 
+
+## Examples: Membership and Subsets
+:::{.nonincremental}
+
+- $A = \{x | x \text{ is a multiple of 2 and } 1<x<9\}$
+- $B = \{t | t \text{ is a rational number greater than } 1\}$
+
+### Symbols:
+
+::: {.columns}
+::: {.column}
+- $4$ `r hideText('$\\in$')` $A$, 
+- $5$ `r hideText('$\\notin$')` $A$,
+:::
+::: {.column}
+- $1/2$ `r hideText('$\\notin$')` $B$,
+- $3.53$ `r hideText('$\\in$')` $B$ 
+:::
+:::
+:::
+<!-- end columns -->
+
+:::{.fragment .nonincremental}
+### Set
+- Set of positive integers less than 1: 
+:::
+
+## Practice Problems
+
+1. Express the set of even numbers < 10 using roster notation.
+
+\
+
+2. Use set-builder notation for integers greater than 5.
+
+
+## Q1. 
+
+:::{.nonincremental}
+
+- What does the symbol ∅ mean?
+  A) Belongs to
+  B) Subset
+  C) Empty set
+  D) Greater than
+
+:::
+
+## Q2.
+
+:::{.nonincremental}
+
+- What is a correct roster notation for the set of odd numbers < 10?
+  A) {1, 2, 3, 4, 5}
+  B) {2, 4, 6, 8}
+  C) {1, 3, 5, 7, 9}
+  D) {0, 2, 4, 6, 8}
+
+:::
+
+## Q3.
+:::{.nonincremental}
+- Are set of odds less than 10 equivalant to set of evens less than 10?
+  a. Yes
+  b. No
+:::
