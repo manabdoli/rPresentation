@@ -25,13 +25,11 @@ params:
 
 ## Concept Overview
 
-* Universal set (U or S)
 * Union ($A \cup B$)
 * Intersection ($A\cap B$)
 * Difference ($A-B$)
+* Universal set (U or S)
 * Complement ($A^c = U-A$)
-* Cardinal Number: $n(.)$
-* Equality and Equivalency ($A=B \quad \text{v.} \quad A\equiv B$)
 
 {{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
 
@@ -113,7 +111,7 @@ d. Cardinality will increase for *union* and decrease for *intesection*.
 :::
 
 ## Differnce $A\setminus B$ or $A-B$
-- Common elements of two (or more) sets
+- Elements in $A$ that are not in $B$
 - $A-B = A\setminus B= \{ x | x\in A \text{ BUT (AND) } x\notin B\}$
 
 - Example:

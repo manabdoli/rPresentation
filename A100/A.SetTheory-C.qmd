@@ -84,7 +84,7 @@ set.seed(123)
 * Naming Convention: Capital Letters
 * Definition:
   * Descriptive Notation
-    - $A$ is the set of integer numbers between 1 and 9.
+    - $A$ is the set of integer numbers between 1 and 9, inclusive.
 
   * Roster Notation
     - $A=\{1, 2, ..., 9\}$

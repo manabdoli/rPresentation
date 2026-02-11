@@ -1,0 +1,190 @@
+---
+title: "B1 - Visualizing One Categorical Variable"
+author: "Mansour Abdoli, PhD"
+format:
+  live-revealjs:
+    slide-number: true
+    incremental: true
+    chalkboard:
+        buttons: true  # Shows icons for easy access
+    preview-links: true
+    code-overflow: wrap
+    footer: "B1 - Visualizing One Categorical Variable"
+#resources:
+#  - assets/webr_helpers.R
+engine: knitr
+execute:
+  echo: true
+  warning: false
+  message: false
+#output-files: CK-chx.x-y.y.html
+params:
+  load_helper: false
+  showDetails: false
+---
+
+## Concept Overview
+:::{.nonincremental}
+* One Categorical Variable
+  * Frequency & Relative Frequency Table
+  * Barplot and Pie-Chart
+* One Numerical Variable
+  * Grouping (Binning)
+  * Histogram
+:::
+
+{{< include ../A100/_extensions/r-wasm/live/_knitr.qmd >}}
+
+```{webr}
+#| echo: false
+#| output: false
+#| warning: false
+#| message: false
+
+#  Packages available in your WebR build -
+
+# Load your helper functions (optional)
+if(isTRUE(params$load_helper)){
+  helpers <- readLines("assets/webr_helpers.R", warn = FALSE)
+  eval(parse(text = helpers))
+}
+
+options(digits = 3)
+
+```
+
+```{r}
+#| echo: false
+# Helper function
+# suppressPackageStartupMessages({
+# })
+
+# if(isTRUE(params$load_helper)){
+#   source('assets/webr_helpers.R')
+# }
+# add any helper functions needed
+
+```
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+# suppressPackageStartupMessages({
+# })
+
+showDetails <- isTRUE(params$showDetails)
+hideText <- function(text, show=showDetails){
+  if(show) text else
+    funs2teach::hideText(text, docType = 'html')
+}
+
+options(knitr.kable.NA = '')
+set.seed(123)
+```
+
+## Organizing a Categorical Variable
+### Example:
+What is the color of your car:
+```{webr}
+x <- c('Red', 'Silver', 'Blue', 'Silver', 'Red', 'Green'); print(x)
+```
+
+- How would you organize it?
+
+
+## Frequency Table:
+::: {.columns}
+::: {.column}
+- Each value is called a **level**
+- $S$ is the set of all levels.
+- We count each level:
+ $$\rightarrow \text{ Frequency Table} $$
+:::
+::: {.column}
+
+::: {.fragment}
+```{webr}
+table(x) |> data.frame()
+```
+:::
+:::
+:::
+<!-- end columns -->
+
+
+## Proportion Distribution 
+::: {.columns}
+::: {.column}
+### Relative Frequency (Proportion)
+
+Let $A$ be a level of set of levels
+
+Let $n(A)$ be the count of $A$.
+
+$p_A = \frac{n(A)}{n(S)}$
+:::
+::: {.column}
+### Complete the Table
+```{webr}
+table(x) |> data.frame() -> xTable
+cbind( xTable, Prop='' )
+```
+:::
+:::
+<!-- end columns -->
+ 
+
+## Visualizing Distribution
+```{webr}
+xTable$Prop <- xTable$Freq / sum(xTable$Freq)
+
+```
+
+::: {.columns}
+::: {.column}
+### Frequency Bar Graph
+```{webr}
+#| fig-width: 5
+#| fig-height: 2
+barplot(height=xTable$Freq)
+```
+:::
+::: {.column}
+### Proportion Bar Graph
+```{webr}
+#| fig-width: 5
+#| fig-height: 2
+barplot(height=xTable$Prop)
+```
+:::
+:::
+
+<!-- end columns -->
+
+<!-- ## Pareto Chart:
+ 
+Side-by-Side Bar Graph (Multiple Samples):
+ 
+Pie Chart:
+ 
+Organizing a Numerical Variable
+(Relative) Frequency Table for Discrete Numerical Variables:
+ 
+Grouping Numbers
+Lower-Class and Upper-Class Limits:
+ 
+Computing Class Width:
+ 
+Class Width for a given Number of Classes:
+ 
+Questions
+Where do we use frequency or where do we use proportions? 
+ 
+Can we rearrange bars in a bar plot? 
+ 
+Why pie charts are not appropriate for comparing more than two categories? What they are useful for? 
+ 
+ 
+Why should we use the class-width formula shown below as an approximation?
+"class width"≈("Greates data value" −"Smallest data Value" )/"desired number of classes" 
+-->
