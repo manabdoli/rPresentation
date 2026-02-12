@@ -4,11 +4,13 @@
 			"path": "."
 		},
 		{
-			"path": "/Users/mabdoli/CSU Fullerton Dropbox/Mansour Abdoli/CSUF_Math_338/CourseKata Materials/CK-GitHubCopy"
-	], 
-	"settings": { 
-		"files.exclude": { 
-			"**/.Rhistory": true, 
+			"path": "../WIP/a100/Notes"
+		}
+	],
+	"settings": {
+		"files.exclude": {
+			"**/.Rhistory": true,
 			"**/.Rproj.user": true
+		}
 	}
 }
