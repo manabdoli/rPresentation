@@ -1,5 +1,5 @@
 ---
-title: "A. Set Theory: Venn Diagram"
+title: "A. Set Theory: Application of Venn Diagram"
 author: "Mansour Abdoli, PhD"
 format:
   live-revealjs:
@@ -9,7 +9,7 @@ format:
         buttons: true  # Shows icons for easy access
     preview-links: true
     code-overflow: wrap
-    footer: "A.Set Theory-E"
+    footer: "A.Set Theory-F"
 #resources:
 #  - assets/webr_helpers.R
 engine: knitr
@@ -23,9 +23,12 @@ params:
   showDetails: false
 ---
 
-### Topics
-* **Venn diagrams** 
-* **subsets** as **events**
+## Concept Overview
+Venn diagrams can help us in real-world problems with:
+
+* Categorizing overlapping groups
+* Finding a set cardinality
+* Understanding surveys
 
 {{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
 
@@ -76,56 +79,16 @@ options(knitr.kable.NA = '')
 set.seed(123)
 ```
 
-## Venn Diagram
-::: {.columns}
-::: {.column}
-- Representing 
-  - Universal Set as a box
-  - Subsets as segments of the box (circles)
-:::
-::: {.column}
-:::{.fragment}
-
-```{r, echo=FALSE}
-#| fig-width: 5
-#| fig-height: 5
-par(mar=c(0,0,0,0), xpd=TRUE)
-funs2teach::drawPolygon(
-    n=4, r=10, angle=pi/4, labels = 'U')
-funs2teach::drawPolygon(
-    n=1000, r=4, 
-    center=c(-1.5, 0), col=adjustcolor('blue', .5),
-    border = 'blue', 
-    labels = 'A', angle=pi, cex = 1.5, adj=1, 
-    add=TRUE)
-funs2teach::drawPolygon(
-    n=1000, r=4, 
-    center=c(1.5, 0), col=adjustcolor('red', .5), 
-    labels = 'B', angle=0, cex = 1.5, adj=1,
-    border = 'red', 
-    add=TRUE)
-
-```
-
-:::
-:::
-:::
-<!-- end columns -->
-
-
 ## Guided Example 1
+:::{.nonincremental style="font-size: 0.85em"}
 ::: {.columns}
-::: {.column width="45%"}
-- **Set A**: students who take math.
-- **Set B**: students who take English.
-  * 12 in both A and B
-  * 18 only in A
-  * 10 only in B
+::: {.column}
+- In a gym of 80 members: 45 do yoga, 35 do weights, 20 do both
+* How many do neither?
+  + At least one: `r hideText('45 + 35 – 20 = 60')`
+  + **Doing neither:** `r hideText('80 – 60 = 20')` 
 :::
-::: {.column width="55%"}
-  * Fill a Venn diagram and answer: How many are in $A \cup B$?
-
-:::{.fragment}
+::: {.column}
 ```{r, echo=FALSE}
 #| fig-width: 5
 #| fig-height: 5
@@ -136,35 +99,34 @@ funs2teach::drawPolygon(
     n=1000, r=4, 
     center=c(-1.5, 0), col=adjustcolor('blue', .5),
     border = 'blue', 
-    labels = 'A', angle=pi, cex = 1.5, adj=1, 
+    labels = 'Y', angle=pi, cex = 1.5, adj=1, 
     add=TRUE)
 funs2teach::drawPolygon(
     n=1000, r=4, 
     center=c(1.5, 0), col=adjustcolor('red', .5), 
-    labels = 'B', angle=0, cex = 1.5, adj=1,
+    labels = 'W', angle=0, cex = 1.5, adj=1,
     border = 'red', 
     add=TRUE)
 ```
 :::
 :::
-:::
 <!-- end columns -->
+
+:::
+
 
 ## Guided Example 2
-::: {.columns}
-::: {.column width="45%"}
-- A group of 50 students:
-  - 35 take math
-  - 20 take science
-  - 10 take both
-- How many students take neither?
-:::
-::: {.column width="55%"}
-  * In both = 10
-  * In any (union) = 25 + 10 + 10 = 45
-  * Neither =  `r hideText('**50 – 45 = 5**')`
+:::{.nonincremental style="font-size: 0.85em"}
+In a college:
 
-:::{.fragment}
+::: {.columns}
+::: {.column}
+* 120 students study Spanish, 90 French, 40 both
+* How many study only one language?
+   + Spanish only =  `r hideText('120 - 40 = 80')`, French only =   `r hideText('90 - 40 = 50')` 
+   + **Total for one language =** <br/> `r hideText('80 + 50 = 130')`
+:::
+::: {.column}
 ```{r, echo=FALSE}
 #| fig-width: 5
 #| fig-height: 5
@@ -175,72 +137,100 @@ funs2teach::drawPolygon(
     n=1000, r=4, 
     center=c(-1.5, 0), col=adjustcolor('blue', .5),
     border = 'blue', 
-    labels = 'A', angle=pi, cex = 1.5, adj=1, 
+    labels = 'S', angle=pi, cex = 1.5, adj=1, 
     add=TRUE)
 funs2teach::drawPolygon(
     n=1000, r=4, 
     center=c(1.5, 0), col=adjustcolor('red', .5), 
-    labels = 'B', angle=0, cex = 1.5, adj=1,
+    labels = 'F', angle=0, cex = 1.5, adj=1,
     border = 'red', 
     add=TRUE)
 ```
 :::
 :::
-:::
 <!-- end columns -->
+:::
 
 ## Practice Problems
-:::{.nonincremental}
-1. In a class of 40, 28 like coffee, 22 like tea, 15 like both.
-  * How many like only coffee?
+:::{.nonincremental style="font-size: 0.85em"}
+
+1. Of 100 voters: 60 support candidate A, 50 support B, 20 support both.
+   * How many support only A or only B?
 
 \
+
+2. 40 employees have pets: 25 have dogs, 18 have cats, 10 have both.
+   * How many have only one pet?
+   
 \
 
-2. 100 students: 70 use Instagram, 50 use TikTok, 30 use both.
-  * How many use neither?
-
 :::
 
-## Q1.
-:::{.nonincremental}
-- In a survey of 60 people, 35 like chocolate, 30 like vanilla, 10 like both. How many like only chocolate?
-
-A) 25
-B) 35
-C) 10
-D) 45
-:::
-
-## Q2
-:::{.nonincremental}
-
-- If 10 students play guitar, 6 play piano, and 4 play both, how many play only one instrument?
-
-A) 6
-B) 8
-C) 16
-D) 4
-:::
-
-## Concept Overview
-:::{.nonincremental style="font-size:.85em;"}
-* **Venn diagrams** represents sets and their relationship by (overlapping) circles.
-  * A set is also called an **event**.
-* Common regions in a Venn Diagram with two sets:
-
+## Problems with Three Sets
+:::{.nonincremental style="font-size: 0.85em"}
 ::: {.columns}
 ::: {.column}
-  * **Only A**: in A but not B
-  * **Only B**: in B but not A
+In a survey of 100 college students, it was found that in high school, 25 took Physics, 45 took Biology, 48 took Math, 10 took Physics and Math, 8 took Biology and Math, 6 took Physics and Biology, and 5 took all three subjects.
+
+a) Fill in all eight regions of the Venn diagram.
+b) How many did not take any of the three subjects? 
 :::
 ::: {.column}
-  * **A $\cap$ B**: in both A and B
-  * **A $\cup$ B**: in A or B or both
+c) How many took biology, but not Math?
+```{r, echo=FALSE}
+#| fig-width: 5
+#| fig-height: 5
+par(mar=c(0,0,0,0), xpd=TRUE)
+funs2teach::drawPolygon(
+    n=4, r=10, angle=pi/4, labels = 'U')
+d <- 2.5
+dth <- 2*pi/3*(0:2)
+funs2teach::drawPolygon(
+    n=1000, r=4, 
+    center=d*c(cos(dth[1]), sin(dth[1])),
+    col=adjustcolor('blue', .5),
+    border = 'blue', 
+    labels = 'P', angle=dth[1], cex = 1.5, adj=1, 
+    add=TRUE)
+funs2teach::drawPolygon(
+    n=1000, r=4, 
+    center=d*c(cos(dth[2]), sin(dth[2])),
+    col=adjustcolor('yellow', .5),
+    border = 'yellow', 
+    labels = 'M', angle=dth[2], cex = 1.5, adj=1, 
+    add=TRUE)
+funs2teach::drawPolygon(
+    n=1000, r=4, 
+    center=d*c(cos(dth[3]), sin(dth[3])),
+    col=adjustcolor('red', .5), 
+    labels = 'B', angle=dth[3], cex = 1.5, adj=1,
+    border = 'red', 
+    add=TRUE)
+```
 :::
 :::
 <!-- end columns -->
-* Cardinal Number of a Union of two sets
-    * $n(A∪B)=n(A)+n(B)−n(A\cap B)$
-    * $n(A∪B)=n(A-B)+n(B-A)+n(A\cap B)$
+:::
+
+## Quiz: Q1
+:::{.nonincremental}
+
+- In a group of 90 students, 50 play soccer, 40 play basketball, and 20 play both. How many play at least one of the sports?
+
+A) 70
+B) 50
+C) 30
+D) 90
+
+:::
+
+## Quiz: Q2
+:::{.nonincremental}
+
+- In a study of 200 people, 120 liked comedy movies, 90 liked action, and 50 liked both. How many liked none of them?
+
+A) 160
+B) 80
+C) 40
+D) 10
 :::

@@ -1,0 +1,147 @@
+---
+title: "A. Set Theory: Application of Venn Diagram"
+author: "Mansour Abdoli, PhD"
+format:
+  live-revealjs:
+    slide-number: true
+    incremental: true
+    chalkboard:
+        buttons: true  # Shows icons for easy access
+    preview-links: true
+    code-overflow: wrap
+    footer: "A.Set Theory-F"
+#resources:
+#  - assets/webr_helpers.R
+engine: knitr
+execute:
+  echo: true
+  warning: false
+  message: false
+#output-files: CK-chx.x-y.y.html
+params:
+  load_helper: false
+  showDetails: false
+---
+
+### Concept Overview
+
+* A **Venn diagram** shows how events overlap.
+* A **contingency table** focuses on each disjoint subset (a.k.a. **outcome**).
+* A **tree diagram** builds **outcomes** through the sequences of events or choices.
+* All these tools represent **sets of sets**.
+
+{{< include ./_extensions/r-wasm/live/_knitr.qmd >}}
+
+```{webr}
+#| echo: false
+#| output: false
+#| warning: false
+#| message: false
+
+#  Packages available in your WebR build -
+
+# Load your helper functions (optional)
+if(isTRUE(params$load_helper)){
+  helpers <- readLines("assets/webr_helpers.R", warn = FALSE)
+  eval(parse(text = helpers))
+}
+
+options(digits = 3)
+
+```
+
+```{r}
+#| echo: false
+# Helper function
+# suppressPackageStartupMessages({
+# })
+
+# if(isTRUE(params$load_helper)){
+#   source('assets/webr_helpers.R')
+# }
+# add any helper functions needed
+
+```
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+# suppressPackageStartupMessages({
+# })
+
+showDetails <- isTRUE(params$showDetails)
+hideText <- function(text, show=showDetails){
+  if(show) text else
+    funs2teach::hideText(text, docType = 'html')
+}
+
+options(knitr.kable.NA = '')
+set.seed(123)
+```
+
+### Guided Example
+
+1. In a gym of 80 members: 45 do yoga, 35 do weights, 20 do both
+
+   * Build a *Venn Diagram*, a *Contingency Table*, and a *Tree Diagram*.  Tree diagram shows 4 outcomes:
+
+```{r, fig.width=8, fig.height=3, warning=FALSE, message=FALSE}
+ggplot()+
+  xlim(c(-.2, 5))+
+  ylim(c(0, 1))+
+  geom_rect(aes(xmin=-0.1, xmax=1.1, ymin=0, ymax=1),
+            fill='white', color='black')+
+  geom_polygon(aes(x,y), 
+               data = funs2teach::circle(c(0.35, .5), .3, n=100),
+             color='red', fill='#ffffff00') +
+  geom_polygon(aes(x,y), 
+               data = funs2teach::circle(c(0.65, .5), .3, n=100),
+             color='blue', fill='#ffffff00') +
+  ggpp::annotate(geom = 'table', x = 1.2, y = 0.25, size = 4.5,
+           label = data.frame(Yoga=c('Yes', 'No'), 
+                        `Weight: Yes`=c('', ''), 
+                        `Weight: No`=c('', ''), 
+                        check.names = FALSE)) +
+  geom_segment(aes(x = 3.5, y = 0.5, xend = 4.0, yend = 0.75)) +
+  geom_segment(aes(x = 3.5, y = 0.5, xend = 4.0, yend = 0.25)) +
+  geom_segment(aes(x = 4.4, y = 0.25, xend = 4.9, yend = 0.35)) +
+  geom_segment(aes(x = 4.4, y = 0.25, xend = 4.9, yend = 0.15)) +
+  geom_segment(aes(x = 4.4, y = 0.75, xend = 4.9, yend = 0.85)) +
+  geom_segment(aes(x = 4.4, y = 0.75, xend = 4.9, yend = 0.65)) +
+  coord_fixed() +
+  theme_void()
+
+```
+
+
+### Practice Problem 1
+You flip a coin and then roll a die. How many total outcomes?
+   * Draw a tree and count outcomes.
+
+\
+
+### Practice Problem 2
+A class has 3 math students, 2 art students, and one student takes both. One is picked at random. Answer these questions given we have 6 students in total. 
+
+	– What is the chance the student is in math?
+
+
+	– What is the chance a randomly chosen student is in math only?
+
+### Quiz: Q1
+
+If you flip a coin twice, how many possible outcomes are there?
+
+* A. 2
+* B. 3
+* C. 4
+* D. 5
+
+
+### Quiz: Q2
+Which statement is true about tree diagrams?
+
+* A. They only apply to numbers
+* B. They show possible outcomes of sequential events
+* C. They replace Venn diagrams
+* D. They require set notation

@@ -164,6 +164,8 @@ eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwibWVzc2FnZSI6ZmFs
 </section>
 <section id="venn-diagram" class="slide level2">
 <h2>Venn Diagram</h2>
+<div class="columns">
+<div class="column">
 <ul>
 <li class="fragment">Representing
 <ul>
@@ -171,85 +173,101 @@ eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwibWVzc2FnZSI6ZmFs
 <li class="fragment">Subsets as segments of the box (circles)</li>
 </ul></li>
 </ul>
+</div><div class="column">
 <div class="fragment">
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="A.SetTheory-E_files/figure-revealjs/unnamed-chunk-5-1.png" width="768"></p>
+<p><img data-src="A.SetTheory-E_files/figure-revealjs/unnamed-chunk-5-1.png" width="480"></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
+</div></div>
+<!-- end columns -->
 </section>
 <section id="guided-example-1" class="slide level2">
 <h2>Guided Example 1</h2>
-<ul>
-<li class="fragment"><strong>Set A</strong>: students who take math. <strong>Set B</strong>: students who take English.</li>
-</ul>
 <div class="columns">
-<div class="column">
+<div class="column" style="width:45%;">
+<ul>
+<li class="fragment"><strong>Set A</strong>: students who take math.</li>
+<li class="fragment"><strong>Set B</strong>: students who take English.
 <ul>
 <li class="fragment">12 in both A and B</li>
-</ul>
-</div><div class="column">
-<ul>
 <li class="fragment">18 only in A</li>
-</ul>
-</div></div>
-<!-- end columns -->
-<ul>
 <li class="fragment">10 only in B</li>
-<li class="fragment">Fill a Venn diagram and answer: How many are in A ∪ B?</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:55%;">
+<ul>
+<li class="fragment">Fill a Venn diagram and answer: How many are in <span class="math inline">\(A \cup B\)</span>?</li>
 </ul>
 <div class="fragment">
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="A.SetTheory-E_files/figure-revealjs/unnamed-chunk-6-1.png" width="768"></p>
+<p><img data-src="A.SetTheory-E_files/figure-revealjs/unnamed-chunk-6-1.png" width="480"></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
+</div></div>
+<!-- end columns -->
 </section>
 <section id="guided-example-2" class="slide level2">
 <h2>Guided Example 2</h2>
+<div class="columns">
+<div class="column" style="width:45%;">
 <ul>
-<li class="fragment">Universal set has 50 students. 35 take math, 20 take science, 10 take both. many students take neither?
+<li class="fragment">A group of 50 students:
 <ul>
-<li class="fragment">Math only = 25, Science only = 10, Both = 10</li>
-<li class="fragment">Total in sets = 25 + 10 + 10 = 45</li>
+<li class="fragment">35 take math</li>
+<li class="fragment">20 take science</li>
+<li class="fragment">10 take both</li>
+</ul></li>
+<li class="fragment">How many students take neither?</li>
 </ul>
-<span style="color:white;"><strong>Answer: 50 – 45 = 5</strong></span></li>
+</div><div class="column" style="width:55%;">
+<ul>
+<li class="fragment">In both = 10</li>
+<li class="fragment">In any (union) = 25 + 10 + 10 = 45</li>
+<li class="fragment">Neither = <span style="color:white;"><strong>50 – 45 = 5</strong></span></li>
 </ul>
 <div class="fragment">
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="A.SetTheory-E_files/figure-revealjs/unnamed-chunk-7-1.png" width="768"></p>
+<p><img data-src="A.SetTheory-E_files/figure-revealjs/unnamed-chunk-7-1.png" width="480"></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
+</div></div>
+<!-- end columns -->
 </section>
 <section id="practice-problems" class="slide level2">
 <h2>Practice Problems</h2>
 <ol type="1">
-<li class="fragment">In a class of 40, 28 like coffee, 22 like tea, 15 like both.</li>
+<li>In a class of 40, 28 like coffee, 22 like tea, 15 like both.</li>
 </ol>
 <ul>
-<li class="fragment">How many like only coffee?</li>
+<li>How many like only coffee?</li>
 </ul>
+<p><br>
+<br>
+</p>
 <ol start="2" type="1">
-<li class="fragment">100 students: 70 use Instagram, 50 use TikTok, 30 use both.</li>
+<li>100 students: 70 use Instagram, 50 use TikTok, 30 use both.</li>
 </ol>
 <ul>
-<li class="fragment">How many use neither?</li>
+<li>How many use neither?</li>
 </ul>
 </section>
 <section id="q1." class="slide level2">
@@ -278,24 +296,35 @@ eyJhdHRyIjp7ImVjaG8iOmZhbHNlLCJlZGl0IjpmYWxzZSwiZXZhbCI6dHJ1ZSwibWVzc2FnZSI6ZmFs
 </section>
 <section id="concept-overview" class="slide level2">
 <h2>Concept Overview</h2>
+<div style="font-size:.85em;">
 <ul>
-<li class="fragment"><strong>Venn diagrams</strong> represents sets and their relationship by (overlapping) circles.
+<li><strong>Venn diagrams</strong> represents sets and their relationship by (overlapping) circles.
 <ul>
-<li class="fragment">A set is also called an <strong>event</strong>.</li>
+<li>A set is also called an <strong>event</strong>.</li>
 </ul></li>
-<li class="fragment">Common regions in a Venn Diagram with two sets:
+<li>Common regions in a Venn Diagram with two sets:</li>
+</ul>
+<div class="columns">
+<div class="column">
 <ul>
-<li class="fragment"><strong>Only A</strong>: in A but not B</li>
-<li class="fragment"><strong>Only B</strong>: in B but not A</li>
-<li class="fragment"><strong>A <span class="math inline">\(\cap\)</span> B</strong>: in both A and B</li>
-<li class="fragment"><strong>A <span class="math inline">\(\cup\)</span> B</strong>: in A or B or both</li>
-</ul></li>
-<li class="fragment">Cardinal Number of a Union of two sets
+<li><strong>Only A</strong>: in A but not B</li>
+<li><strong>Only B</strong>: in B but not A</li>
+</ul>
+</div><div class="column">
 <ul>
-<li class="fragment"><span class="math inline">\(n(A∪B)=n(A)+n(B)−n(A\cap B)\)</span></li>
-<li class="fragment"><span class="math inline">\(n(A∪B)=n(A-B)+n(B-A)+n(A\cap B)\)</span></li>
+<li><strong>A <span class="math inline">\(\cap\)</span> B</strong>: in both A and B</li>
+<li><strong>A <span class="math inline">\(\cup\)</span> B</strong>: in A or B or both</li>
+</ul>
+</div></div>
+<!-- end columns -->
+<ul>
+<li>Cardinal Number of a Union of two sets
+<ul>
+<li><span class="math inline">\(n(A∪B)=n(A)+n(B)−n(A\cap B)\)</span></li>
+<li><span class="math inline">\(n(A∪B)=n(A-B)+n(B-A)+n(A\cap B)\)</span></li>
 </ul></li>
 </ul>
+</div>
 
 <script type="webr-data">
 eyJvcHRpb25zIjp7ImJhc2VVcmwiOiJodHRwczovL3dlYnIuci13YXNtLm9yZy92MC41LjQvIn0sInBhY2thZ2VzIjp7InBrZ3MiOlsiZXZhbHVhdGUiLCJrbml0ciIsImh0bWx0b29scyJdLCJyZXBvcyI6W119LCJyZW5kZXJfZGYiOiJkZWZhdWx0In0=

@@ -49,3 +49,6 @@ po/*~
 rsconnect/
 
 A160/_extensions
+A100/_extensions
+*.html
+*_files/
